@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ToDo.Api</name>
+    </assembly>
+    <members>
+        <member name="M:ToDo.Service.Controllers.ToDo.Create(ToDo.Service.Controllers.Dtos.CreateToDoDto)">
+             <summary>
+             Добавление информации о новом гражданине.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 PUT /v1/ToDo
+                 {
+                     "fio": "Vitaly",
+                     "snilsNumber": "222-233-445 85",
+                     "inn": "821257205876",
+                     "birthday": "1944-06-06",
+                     "address": "ул. Пушкина. дом колотушкина",
+                     "politicalOpinion": "нет"
+                 }
+             </remarks>
+             <param name="ToDoDto">Информация о новом гражданине. <see cref="T:ToDo.Service.Controllers.Dtos.CreateToDoDto">CreateToDoDto</see></param>
+             <response code="201">Возвращает Id созданной записи.</response>
+             <response code="400">Данные введены неверно.</response>
+             <response code="500">Ошибка сервера</response>
+        </member>
+        <member name="M:ToDo.Service.Controllers.ToDo.Update(System.Int32,ToDo.Api.Controllers.Dtos.UpdateToDoDto)">
+             <summary>
+             Редактирование информации о новом гражданине.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /v1/ToDo/101
+                 {
+                     "fio": "Vitaly",
+                     "snilsNumber": "222-233-445 85",
+                     "inn": "821257205876",
+                     "birthday": "1944-06-06",
+                     "deathDay": "2020-06-06",
+                     "address": "Погост",
+                     "politicalOpinion": "нет"
+                 }
+             </remarks>
+             <param name="id">Id редактируемой записи.</param>
+             <param name="ToDoDto">Информация о новом гражданине. <see cref="T:ToDo.Api.Controllers.Dtos.UpdateToDoDto">UpdateToDoDto</see></param>
+             <response code="200">Данные обновлены успешно.</response>
+             <response code="400">Данные введены неверно.</response>
+             <response code="500">Ошибка сервера.</response>
+        </member>
+        <member name="T:ToDo.Service.Controllers.Dtos.CreateToDoDto">
+            <summary>
+            Модель данных для создания новой записи о гражданине.
+            </summary>
+        </member>
+        <member name="P:ToDo.Service.Controllers.Dtos.CreateToDoDto.Fio">
+            <summary>
+            Имя и фамилия.
+            </summary>
+        </member>
+        <member name="P:ToDo.Service.Controllers.Dtos.CreateToDoDto.SnilsNumber">
+            <summary>
+            Номер снилс(для разделителя можно использоватьпробелы и тире) Пример: 322-233-445 85
+            </summary>
+        </member>
+        <member name="P:ToDo.Service.Controllers.Dtos.CreateToDoDto.Inn">
+            <summary>
+            Инн (12 цифр)
+            </summary>
+        </member>
+        <member name="P:ToDo.Service.Controllers.Dtos.CreateToDoDto.Birthday">
+            <summary>
+            Дата рождения
+            </summary>
+        </member>
+        <member name="P:ToDo.Service.Controllers.Dtos.CreateToDoDto.DeathDay">
+            <summary>
+            Дата смерти
+            </summary>
+        </member>
+        <member name="P:ToDo.Service.Controllers.Dtos.CreateToDoDto.Address">
+            <summary>
+            Адрес
+            </summary>
+        </member>
+        <member name="P:ToDo.Service.Controllers.Dtos.CreateToDoDto.PoliticalOpinion">
+            <summary>
+            Политические взгляды :)
+            </summary>
+        </member>
+        <member name="T:ToDo.Api.Controllers.Dtos.UpdateToDoDto">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
